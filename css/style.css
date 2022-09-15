@@ -114,3 +114,7 @@ u {
     .fl-contactpic {
         width: fit-content;
     }
+
+    .fl-contacts {
+        background-color: white;
+    }
