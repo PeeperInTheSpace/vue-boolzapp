@@ -97,4 +97,6 @@ i {
     .fl-notificationicon {
         background-color: rgba(255, 255, 255, 0.764);
         color: #8edafc;
+        width: 50px;
+        margin-left: 12px;
     }
