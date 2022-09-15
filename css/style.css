@@ -11,9 +11,18 @@ body {
     background: linear-gradient(#009688 20%, #d6dbd6 5%) fixed;
 }
 
-i {
+i  {
     font-size: 25px;
     padding-right: 10px;
+    cursor: pointer;
+}
+
+i:hover {
+    transition: all 1s;
+    color: black;
+}
+
+u {
     cursor: pointer;
 }
 
@@ -33,6 +42,7 @@ i {
     .fl-chatlist {
         background: linear-gradient(#eaeaea 30%, white 50%) fixed;
         border-radius: 30px 0 0 30px;
+        border-right: #dddddd 1px solid;
     }
 
     .fl-conversation {
@@ -63,7 +73,6 @@ i {
 
     .fl-chat {
         height: 83vh;
-        border: blue solid 2px;
         background: url(../img/mine.jpg)
     }
 
@@ -79,7 +88,7 @@ i {
         height: 50px;
     }
 
-    .fl-greyicon {
+    .fl-grey {
         color: #b1b1b1;
     }
 
@@ -99,4 +108,9 @@ i {
         color: #8edafc;
         width: 50px;
         margin-left: 12px;
+        padding-top: 3px;
+    }
+
+    .fl-contactpic {
+        width: fit-content;
     }
