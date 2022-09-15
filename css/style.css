@@ -1,4 +1,100 @@
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     height: 100%;
     background: linear-gradient(#009688 20%, #d6dbd6 5%) fixed;
 }
+
+i {
+    font-size: 25px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+/* PERSONAL CLASSES & IDs */
+
+    /* LAYOUT CONSTRUCTION */
+
+    .fl-maincontainer {
+        background: linear-gradient(#eaeaea 30%, white 50%) fixed;
+        height: 95vh;
+    }
+
+    .fl-chatlist, .fl-conversation {
+        height: 95vh;
+    }
+
+    .fl-chatlist {
+        background: linear-gradient(#eaeaea 30%, white 50%) fixed;
+        border-radius: 30px 0 0 30px;
+    }
+
+    .fl-conversation {
+        border-radius: 0 30px 30px 0;;
+
+    }
+
+    .fl-profile, .fl-conversationprofile {
+        height: 7vh;
+    }
+
+    .fl-profile {
+        border-radius: 30px 0 0 0px;
+    }
+
+    .fl-conversationprofile {
+        border-radius: 0 30px 0 0px;
+    }
+
+    .fl-notificationalert {
+        height: 7vh;
+        background-color: #8edafc;
+    }
+
+    .fl-search {
+        height: 5vh;
+    }
+
+    .fl-chat {
+        height: 83vh;
+        border: blue solid 2px;
+        background: url(../img/mine.jpg)
+    }
+
+    .fl-chatinput {
+        border: blue solid 2px;
+        height: 5vh;
+        border-radius: 0 0 30px 0;
+    }
+
+    /* LAYOUT STATIC CONTENT */
+
+    .fl-profilepic {
+        height: 50px;
+    }
+
+    .fl-greyicon {
+        color: #b1b1b1;
+    }
+
+    .fl-searchinput {
+        width: 80%;
+        border: none;
+    }
+
+    .fl-searchbutton {
+        width: 20%;
+        background-color: white;
+        border: none;
+    }
+    
+    .fl-notificationicon {
+        background-color: rgba(255, 255, 255, 0.764);
+        color: #8edafc;
+    }

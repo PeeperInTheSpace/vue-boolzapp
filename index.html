@@ -23,11 +23,81 @@
 
     <body>
 
-        <main>
 
-            <section>
+        <!-- WEBAPP WINDOW -->
 
-                
+        <main class="fl-maincontainer container mt-4 rounded-5">
+
+            <section class="row">
+
+                <!-- LEFT SIDE - CHATS -->
+
+                <section class="fl-chatlist col-4">
+
+                    <!-- PROFILE SUB-SECTION -->
+                    <div class="fl-profile row d-flex justify-content-between">
+                        <div class="d-flex w-25">
+                            <img src="img/avatar_io.jpg" alt="profile-pic" class="fl-profilepic img-fluid rounded-circle mt-2">
+                            <h4 class="align-self-center mt-2 mx-2">Sofia</h4>
+                        </div>
+                        <div class="d-flex justify-content-end align-self-center w-25">
+                            <i class="bi bi-circle fl-greyicon"></i>
+                            <i class="bi bi-chat-left-fill fl-greyicon"></i>
+                            <i class="bi bi-three-dots-vertical fl-greyicon"></i>
+                        </div>
+                    </div>
+                    <!-- NOTIFICATION ALERT SUB-SECTION -->
+                    <div class="fl-notificationalert row d-flex">
+                        <div class="fl-notificationicon align-self-center rounded-circle w-25">
+                            <i class="bi bi-bell-slash-fill"></i>
+                        </div>
+                        <div class="w-75">
+                            <p class="w-100 h-25 align-self-center"><strong>Ricevi notifiche di nuovi messaggi</strong></p>
+                            <u class="w-100">Attiva notifiche desktop</u>
+                        </div>
+                    </div>
+                    <!-- SEARCH SUB-SECTION -->
+                    <div class="fl-search row d-flex">
+                        <button class="fl-searchbutton h-100" type="button" id="button-addon2" @click="addNewTask"><i class="bi bi-search fl-greyicon d-flex justify-content-center"></i></button>
+                        <input type="text" class="fl-searchinput h-100" placeholder="Cerca o inizia una nuova chat" aria-describedby="button-addon2" v-model="task" v-on:keyup.enter="addNewTask">
+                    </div>
+                    <!-- CONTACTS SUB-SECTION -->
+                    <div class="fl-contacts row">
+
+                    </div>
+                    
+                </section>
+
+                <!-- RIGHT SIDE - CONVERSATION -->
+
+                <section class="fl-conversation col">
+
+                    <!-- PROFILE SUB-SECTION -->
+                    <div class="fl-conversationprofile row d-flex justify-content-between">
+                        <div class="d-flex w-25">
+                            <img src="img/avatar_1.jpg" alt="contact-profile-pic" class="fl-profilepic img-fluid rounded-circle mt-2">
+                            <h4 class="align-self-center mt-2 px-2">{{NomeDinamico}}</h4>
+                        </div>
+                        <div class="d-flex justify-content-end align-self-center w-25">
+                            <i class="bi bi-search fl-greyicon"></i>
+                            <i class="bi bi-paperclip fl-greyicon"></i>
+                            <i class="bi bi-three-dots-vertical fl-greyicon"></i>
+                        </div>
+                    </div>
+
+                    <!-- CHAT SUB-SECTION -->
+                    <div class="fl-chat row">
+
+                    </div>
+
+                    <!-- CHAT INPUT SUB-SECTION -->
+                    <div class="fl-chatinput row">
+
+                    </div>
+
+                    
+                </section>
+
             </section>
     
          </main>
