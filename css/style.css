@@ -73,13 +73,14 @@ u {
 
     .fl-chat {
         height: 83vh;
-        background: url(../img/mine.jpg)
+        background: url(../img/mine.jpg);
+        overflow-y: scroll;
     }
 
     .fl-chatinput {
-        border: blue solid 2px;
         height: 5vh;
         border-radius: 0 0 30px 0;
+        background-color: #f3eeea;
     }
 
     /* LAYOUT STATIC CONTENT */
@@ -117,4 +118,12 @@ u {
 
     .fl-contacts {
         background-color: white;
+        height: 76vh;
+        overflow-y: scroll;
+        border-radius: 0 0 0 30px;
+    }
+
+    .fl-messageinput {
+        width: 100%;
+        border: none;
     }
