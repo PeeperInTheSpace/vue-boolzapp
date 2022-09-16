@@ -82,13 +82,16 @@
 
                 <!-- RIGHT SIDE - CONVERSATION -->
 
-                <section class="fl-conversation col">
+                <section class="fl-conversation col p-0">
 
                     <!-- PROFILE SUB-SECTION -->
                     <div class="fl-conversationprofile row d-flex justify-content-between">
-                        <div class="d-flex w-25">
-                            <img src="img/avatar_1.jpg" alt="contact-profile-pic" class="fl-profilepic img-fluid rounded-circle mt-2">
-                            <h4 class="align-self-center mt-2 px-2"></h4>
+                        <div class="d-flex w-50">
+                            <img :src="'img/avatar'+ contacts[activeChat].avatar +'.jpg'" :alt="contacts[activeChat].name" class="fl-profilepic img-fluid rounded-circle mt-2 mx-2">
+                            <div class="">
+                                <h4 class="mt-2 mb-0 px-2">{{contacts[activeChat].name}}</h4>
+                                <p class="px-2 fl-grey">Ultimo accesso alle 15:00</p>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-end align-self-center w-25">
                             <i class="bi bi-search fl-grey"></i>
@@ -98,8 +101,19 @@
                     </div>
 
                     <!-- CHAT SUB-SECTION -->
-                    <div class="fl-chat row">
-
+                    <div class="fl-chat d-block p-3">
+                        <div class="fl-chatin d-flex">
+                            <div class="fl-received mx-5 p-3 rounded-5 mb-4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure obcaecati maiores deleniti eveniet, perferendis vitae fugiat, impedit velit odit hic consectetur minus.
+                                <p class="d-flex justify-content-end fl-grey m-0">15:56</p>
+                            </div>
+                        </div>
+                        <div class="fl-chatout d-flex justify-content-end">
+                            <div class="fl-sent mx-5 p-3 rounded-5">
+                                Ciao!
+                                <p class="d-flex justify-content-end fl-grey m-0">15:56</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- CHAT INPUT SUB-SECTION -->

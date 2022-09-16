@@ -187,7 +187,9 @@ const vueBoolZapp = new Vue (
                                 }
                             ],
                 }
-            ]
+            ],
+
+            activeChat: 0
 
         },
 

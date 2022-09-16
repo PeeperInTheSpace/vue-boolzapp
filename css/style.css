@@ -83,7 +83,7 @@ u {
         background-color: #f3eeea;
     }
 
-    /* LAYOUT STATIC CONTENT */
+    /* LAYOUT CONTENT */
 
     .fl-profilepic {
         height: 50px;
@@ -126,4 +126,24 @@ u {
     .fl-messageinput {
         width: 100%;
         border: none;
+    }
+
+    .fl-sent {
+        background-color: #d5f9ba;
+        height: fit-content;
+        width: 300px;
+    }
+
+    .fl-received {
+        background-color: white;
+        height: fit-content;
+        width: 300px;
+    }
+
+    .fl-chatin {
+        
+    }
+
+    .fl-chatout {
+
     }
