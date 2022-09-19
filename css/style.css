@@ -113,7 +113,8 @@ u {
     }
 
     .fl-contactpic {
-        width: fit-content;
+        height: 50px;
+        padding-right: 10px;
     }
 
     .fl-contacts {
@@ -132,18 +133,16 @@ u {
         background-color: #d5f9ba;
         height: fit-content;
         width: 300px;
+        align-self: flex-end;
     }
 
     .fl-received {
         background-color: white;
         height: fit-content;
         width: 300px;
+        align-self: flex-start;
     }
 
-    .fl-chatin {
-        
-    }
-
-    .fl-chatout {
-
+    .fl-activechat {
+        background-color: rgb(223, 223, 223);
     }

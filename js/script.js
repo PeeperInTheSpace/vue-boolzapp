@@ -189,7 +189,9 @@ const vueBoolZapp = new Vue (
                 }
             ],
 
-            activeChat: 0
+            activeChat: 0,
+            insertedText: "",
+            searching: ""
 
         },
 
@@ -197,6 +199,32 @@ const vueBoolZapp = new Vue (
 
             // METODI
 
+            selectedChat (index) {
+                this.activeChat = index
+            },
+
+            createMessage () {
+                const newMessage = {
+                    date: '10/01/2020 15:51:00',
+                    message: this.insertedText,
+                    status: 'sent'
+                }
+                this.contacts[this.activeChat].messages.push(newMessage)
+                this.insertedText = ""
+            },
+
+            searchStart () {
+                console.log(this.searching);
+                this.contacts.forEach((item) => {
+                    const nameToLowerCase = item.name.toLowerCase();
+                    const searchedName = this.searching.toLowerCase();
+                    if (nameToLowerCase.includes(searchedName)) {
+                        item.visible = true;
+                    } else {
+                        item.visible = false;
+                    }
+                }); 
+            }
 
 
         }

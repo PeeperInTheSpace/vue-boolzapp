@@ -59,11 +59,11 @@
                     <!-- SEARCH SUB-SECTION -->
                     <div class="fl-search row d-flex">
                         <button class="fl-searchbutton h-100 " type="button" id="button-addon2" ><i class="bi bi-search fl-grey d-flex justify-content-center"></i></button>
-                        <input type="text" class="fl-searchinput h-100" placeholder="Cerca o inizia una nuova chat" aria-describedby="button-addon2">
+                        <input type="text" class="fl-searchinput h-100" placeholder="Cerca o inizia una nuova chat" aria-describedby="button-addon2" v-model="searching" @keyup="searchStart">
                     </div>
                     <!-- CONTACTS SUB-SECTION -->
                     <div class="fl-contacts row">
-                        <div class="row" v-for="(user, index) in contacts">
+                        <div class="d-flex" v-for="(user, index) in contacts" :class="activeChat === index ? 'fl-activechat' : ''" @click="selectedChat(index)" v-if="user.visible === true ? user.visible = true : user.visible = false">
                             <div class="fl-contactpic">
                                 <img :src="'img/avatar'+user.avatar+'.jpg'" :alt="user.name" class="fl-profilepic img-fluid rounded-circle mt-2">
                             </div>
@@ -88,7 +88,7 @@
                     <div class="fl-conversationprofile row d-flex justify-content-between">
                         <div class="d-flex w-50">
                             <img :src="'img/avatar'+ contacts[activeChat].avatar +'.jpg'" :alt="contacts[activeChat].name" class="fl-profilepic img-fluid rounded-circle mt-2 mx-2">
-                            <div class="">
+                            <div>
                                 <h4 class="mt-2 mb-0 px-2">{{contacts[activeChat].name}}</h4>
                                 <p class="px-2 fl-grey">Ultimo accesso alle 15:00</p>
                             </div>
@@ -101,30 +101,24 @@
                     </div>
 
                     <!-- CHAT SUB-SECTION -->
-                    <div class="fl-chat d-block p-3">
-                        <div class="fl-chatin d-flex">
-                            <div class="fl-received mx-5 p-3 rounded-5 mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure obcaecati maiores deleniti eveniet, perferendis vitae fugiat, impedit velit odit hic consectetur minus.
-                                <p class="d-flex justify-content-end fl-grey m-0">15:56</p>
-                            </div>
-                        </div>
-                        <div class="fl-chatout d-flex justify-content-end">
-                            <div class="fl-sent mx-5 p-3 rounded-5">
-                                Ciao!
-                                <p class="d-flex justify-content-end fl-grey m-0">15:56</p>
+                    <div class="fl-chat d-flex flex-column p-3">
+                        <div v-for="(item, index) in contacts[activeChat].messages" :class="item.status === 'sent' ? 'fl-sent' : 'fl-received'" class="rounded-4 p-2 mb-4">
+                            <p class="d-block mb-2">{{ item.message }}</p>
+                            <div class="d-flex justify-content-end">
+                                <span class="fl-grey">{{ item.date }}</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- CHAT INPUT SUB-SECTION -->
-                    <div class="fl-chatinput row d-flex">
-                        <div class="col d-flex align-self-center">
+                    <div class="fl-chatinput d-flex">
+                        <div class="col d-flex align-self-center mx-2">
                             <i class="bi bi-emoji-smile fl-grey"></i>
                         </div>
                         <div class="col-8 align-self-center h-75">
-                            <input type="text" class="fl-messageinput h-100 rounded-pill p-2" placeholder="Scrivi un messaggio" aria-describedby="button-addon2">
+                            <input type="text" class="fl-messageinput h-100 rounded-pill p-2" placeholder="Scrivi un messaggio" aria-describedby="button-addon2" v-model="insertedText" @keyup.enter="createMessage">
                         </div>
-                        <div class="col-2 d-flex justify-content-end align-self-center">
+                        <div class="col-2 d-flex justify-content-end align-self-center mx-2">
                             <i class="bi bi-mic-fill fl-grey"></i>
                         </div>
                     </div>
